@@ -1,0 +1,22 @@
+                   
+    <%= form_for @category do |form| %>
+        <div class= "mb-3"> 
+          
+          <%= form.text_area :category, :class => "tinymce" %>
+          <%= tinymce %>
+          
+        </div>
+       
+        <div class="btn-align">                   
+        <%= form.submit class: "btn btn-success btn-sm" %> 
+        </div>
+        <!-- # Inactivating this button for a while
+        <div class="btn-align">
+        <%=  link_to "View Category", blogs_path(:cate => @category.id), class: "btn btn-primary btn-sm"%>
+        </div>
+        -->
+        <div class="btn-align">
+        <%= link_to "Back to Categories", categories_path, class: "btn btn-secondary btn-sm" %>  
+        </div>                  
+    <% end %>                
+              

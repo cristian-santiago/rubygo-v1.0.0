@@ -1,0 +1,70 @@
+<% if user_signed_in? %>
+<section class="vh-150  py-5 " >
+ <div class="container py-5 h-100 " >
+  <div class="row d-flex justify-content-center h-100">
+   <div class="col col-lg-9 col-xl-12">
+    <div class="card-category">
+     <div class="card-body p-4 contentBlog ">
+    
+           
+      <h1 class="text-center my-3 pb-3">Create New Post</h1>
+       <%= form_for @blog do |f| %>
+        <div class="mb-3 form-floating">                
+            
+            <%= f.text_field :title, required: true, placeholder: "Add a title to your post", maxlength: 100, class: "form-control" %>    
+            <label for="title" class="form-label">Post Title</label>                                               
+        </div>
+        <div class="mb-3 form-floating">                
+            
+            <%= f.text_field :description, required: true, placeholder: "Add a description to your post", maxlength: 200, class: "form-control" %>
+            <label for="description" class="form-label">Post Resume</label>                                                   
+        </div>
+        <div class="mb-3 ">
+            
+             
+            <%= tinymce %>
+           <%= f.text_area :content, :class => "tinymce" %>
+            
+            
+        </div>
+        <div class="mb-3 size "> 
+            <label for="categories" class="form-label">Select a category</label>                         
+            <%= f.select :category_id,  Category.all.map { |c| [c.category, c.id]}, {include_blank: true}, {class: "form-control"} %>  
+                                                                                                                         
+        </div>  
+
+   
+
+        <div >                                    
+            <%= f.submit class:"btn btn-secondary"  %>
+        </div>
+       <%end%>
+     
+       
+  
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+<script >
+
+(function()
+/* This fuction helps to fix the issue related to page that don't get the active storage content after load the page 'Edit Profile' */
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>
+
+<%end%>

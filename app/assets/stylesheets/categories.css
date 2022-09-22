@@ -1,0 +1,100 @@
+
+.link{
+    text-decoration: none;
+}
+
+.btn-align{
+    display: inline-flex;
+    padding-top: 1rem;
+    padding-left:  5px;
+}
+
+.btn-align-2{
+    display: inline-flex;
+    padding-top: 1rem;
+    padding-left:  5px;
+}
+
+.card-category{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+
+.separator{
+    
+    width: 15%;
+    height: 3px!important;
+    color: white;
+    background: #fccb90;
+     
+     /* Chrome 10-25, Safari 5.1-6 */
+     background: -webkit-linear-gradient(to left, orange, rgb(255, 30, 0));
+     
+     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     background: linear-gradient(to left, orange, rgb(255, 30, 0));
+
+}
+/* Category buttons random style */
+
+
+
+.variant{
+    padding: 0.9em;
+    display: inline-block;
+    border-radius: 7px;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    line-height: 0.2em;
+    transition: background-color 200ms ease-in-out;
+    transition-property: background-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+
+
+.variant:nth-child(odd) {
+    background: hsl(240, 100%, 90%);
+    color: hsl(240,100%,30%);
+
+  }
+.variant:nth-child(odd):hover{
+    background-color: hsl(240, 100%, 80%);
+    color: hsl(240,100%,30%);
+}
+
+.variant:nth-child(even) {
+    background-color: hsl(181, 100%, 90%);
+    color: hsl(181, 100%, 20%)
+}
+.variant:nth-child(even):hover {
+    background-color: hsl(181, 100%, 80%);
+    color: hsl(181, 100%, 20%)
+}
+.variant:nth-child(3n) {
+    background-color: hsl(0, 100%, 90%);
+    color: hsl(0, 100%, 30%);
+
+}
+.variant:nth-child(3n):hover{
+    background-color: hsl(0, 100%, 80%);
+    color: hsl(0, 100%, 30%);
+}
+
+.variant:nth-child(4n) {
+    background-color: hsl(39, 100%, 90%);
+    color: hsl(39, 100%, 25%)
+}
+.variant:nth-child(4n):hover {
+    background-color: hsl(39, 100%, 80%);
+    color: hsl(39, 100%, 25%)
+}
+/*---------------*/
+
+.categoryBtn{
+
+    padding: 0.9em!important;
+    line-height: 0.2em;
+    border-radius: 7px!important;
+}

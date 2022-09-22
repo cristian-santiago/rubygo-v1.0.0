@@ -1,0 +1,73 @@
+<div >
+  <form class="d-flex search " >
+    <%= form_tag(@blogs_path, method: :get) do %>      
+        
+        <%= text_field_tag(:search, params[:search], placeholder: "Search for a blog here", maxlength: 50, class: "form-control me-2 ") %>        
+      
+        <button class="btn btn-outline-light" type="submit">Search</button>
+    <%end%>
+  </form>
+</div>
+                  
+<section class="vh-150  py-5 " >
+  <div class="container py-5 h-100 " >
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-9 " >
+        <div class="card">
+          <div class="card-body p-4 ">
+             <div class="text-center my-3 pb-3">
+              <%= image_tag("https://cdn.emojidex.com/emoji/xxxhdpi/Ruby.png", class:'mb-2 mt-2')%>
+              <h1 >Ruby Go </h1>  
+             </div>              
+                       
+        
+                  <h2 > All Categories</h2>                
+                  <hr class="separator">
+                  
+                  <div >                
+                    <% @categories.map do |cat| %>
+                      <%= link_to cat.category, blogs_path(:cate => cat.id), class: "link variant" %>
+                    <%end%>
+                  </div>   
+
+                    <h2> Posts </h2>
+                    <hr class="separator">
+
+                  <% @blogs.order("blogs.created_at DESC").map do |blog|%>
+                      <article class= "blog-card">
+                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title" %> </h2>
+                          <div class = "mb-3 mt-3">
+                             <%= link_to blog.category.category, blogs_path(:cate => blog.category_id), class: "link btn btn-outline-secondary categoryBtn" %>
+                             
+                             
+                            </div> 
+                            <div class="align-img-name">
+                            
+                                <% if blog.user.avatar.present? %>
+                                  <%= image_tag(blog.user.avatar, class: "creator-img border-img") %>
+                                <%else%>
+                                  <%= image_tag("no-user-icon.jpg", class: "creator-img border-img") %>
+                                <%end%>                                
+                                <h5 class="name"><%= blog.user.username %></h5>
+                              </div>
+                              <h6><%= blog.created_at.strftime("%d %b, %Y")%></h6>                        
+                            <p> <%= link_to blog.description.to_s, blog_path(blog.id), class: "link-description"%> </p>                            
+                   
+
+                      </article> 
+                  <%end%>                    
+
+               
+                  <div class = "align-center" >
+                  
+                    <%= link_to "Log in to see all posts.", root_path , class: "link-all-blogs btn btn-secondary" %>
+                  </div>    
+                                         
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>  
+

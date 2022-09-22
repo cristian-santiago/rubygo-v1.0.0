@@ -1,0 +1,95 @@
+/* Diamond shape */
+.diamond, .dia {
+ margin: 0 auto;
+ transform-origin: 50% 50%;
+ overflow: hidden;
+ width: 300px;
+ height: 300px;
+ margin-bottom: 20%;
+}
+.diamond {
+ transform: rotate(45deg) translateY(-25px) translateX(-25px);
+}
+.diamond .dia {
+ width: 380px;
+ height: 380px;
+ transform: rotate(-45deg);
+}
+.diamond img {
+ width: 100%;
+ height: auto;
+}
+
+/* Slide elements from About page to left */
+
+@keyframes slideInFromLeft {
+    0% {
+        
+        transform: translateX(-25%);
+        opacity: 0.4;
+    }
+    100% {
+        
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+  
+
+.slideAboutFromLeft {  
+  
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  
+  margin-bottom: 5%;
+  
+}
+
+/* Slide elements from About page to right */
+
+@keyframes slideInFromRight {
+  0% {
+      transform: translateX(25%);
+      opacity: 0.4;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.slideAboutFromRight{
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  
+  margin-top: 5%;
+}
+
+/* Social Media and Email icons */
+.contactIcons{
+  width: 4%;
+  margin-right: 10px;  
+}
+
+/* Colored links */
+.coloredLink{
+  
+  text-decoration: none;
+  
+  
+  color: red;
+  transition: color 300ms ease-in-out;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  }
+.coloredLink:hover{
+  text-decoration: none;
+  
+  
+  color: orange;
+  transition: color 300ms ease-in-out;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}

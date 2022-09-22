@@ -1,0 +1,96 @@
+.stickToolbar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Search bar from root_path */
+/* make the search bar float stick */
+
+.search{
+    
+    margin-right: 20px;
+    vertical-align: middle; 
+    width: 20%;  
+    float: right;
+    margin-top: -3rem;
+    position: relative;
+
+}
+/* Application style  */
+.application{
+
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, orange, rgb(255, 30, 0));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, orange, rgb(255, 30, 0));
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+
+    }
+
+.navTextColor{
+    
+    color: white !important;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
+
+/* Footer and footer img*/
+
+footer{
+    text-align: center;    
+   color: white;
+   background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, orange, rgb(255, 30, 0));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, orange, rgb(255, 30, 0));
+
+    padding-bottom: 1.7rem;    
+       
+    
+}
+
+.footerImg{
+    filter: invert(90%) sepia(100%) saturate(20%) hue-rotate(91deg) brightness(111%) contrast(100%);
+    width: 60%!important;
+    margin:  0 auto;
+          
+}
+
+
+
+/* Custom fontes */
+
+
+.ptsans {
+    font-family: "ptsans";
+    font-size: 19px;
+
+}
+    
+@font-face {
+    font-family: "ptsans";
+ 
+    src: url("ptsans-regular.woff") format("woff"),
+   
+    }
+ 

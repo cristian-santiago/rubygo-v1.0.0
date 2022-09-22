@@ -1,0 +1,2 @@
+module AllBlogsHelper
+end

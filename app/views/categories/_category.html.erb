@@ -1,0 +1,37 @@
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <tr>    
+      <th class="col col-lg-11">
+      
+        <%=  category.category %>
+
+      </th>
+      
+
+      
+      <td>
+        <%= link_to "Edit", edit_category_path(category), class: "btn btn-outline-primary btn-sm " %>  
+      </td>
+      
+      
+     
+      <!-- #Removed the delete button until fix the error while delete a cetegory linked to a blog
+      <td>
+        <%= button_to "Delete", category, method: :delete, class: "btn btn-danger" %>
+      </td>
+      -->
+      
+  </tr>
+    
+ 

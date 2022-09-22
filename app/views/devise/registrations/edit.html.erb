@@ -1,0 +1,116 @@
+
+<section class="h-100 gradient-form" style="background-color: #eeeeee54;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                  <div class="text-center ">
+                    <%= image_tag("ruby.png", style: "width: 61px")%>
+                    <h5 class="mt-1 mb-5 pb-1">Ruby Go</h5>
+                  </div>
+
+                
+                  <p>Edit your account</p>  
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                    <%= render "devise/shared/error_messages", resource: resource %>
+
+                      <div class="form-floating mb-3">                        
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control" %>
+                        <%= f.label :email %>
+                      </div>
+                      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                      <% end %>
+                    <div class="form-floating mb-3">                      
+                      <%= f.text_field :username, autofocus: true, autocomplete: "username",placeholder: "Username" , maxlength: 30, class: "form-control" %>
+                      <%= f.label :username %>
+                    </div>
+                      <p><% if @minimum_password_length %>
+                        <em>(minimum <%= @minimum_password_length %> characters)</em>
+                        <% end %>
+                      </p>
+                      <div class="form-floating mb-3">
+                        
+                        <%= f.password_field :password, autocomplete: "new-password", placeholder: "new-password", class: "form-control"%>
+                       
+                        <%= f.label :password, "New Password" %> 
+                      </div>
+
+                      <div class="form-floating mb-3">
+                        
+                        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "new-password", class: "form-control"  %>
+                        <%= f.label :password_confirmation %>
+                      </div>
+
+                      <div class="form-floating mb-3">
+                        
+                        <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "current-password", class: "form-control" %>
+                        <%= f.label :current_password , "Current Password" %>                         
+                      </div>
+                      
+                      <div class= "actions" id="update" >
+                        <%= f.submit "Update", class: "btn btn-primary col-12 mx-auto  gradient-custom-2 mb-3 btn-margin" %>
+                      </div>
+                     
+                  <% if false %>
+                  <div class="text-center">
+                    <p class= "text-center">Unhappy? &#128546; </p> 
+                    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-danger" %>
+                  </div>     
+                  <% end %>             
+                  <%= link_to "", root_path, class: "arrow left" %>
+                </div>
+            </div>
+                <div class="col-lg-6 d-flex justify-content-center gradient-custom-2">
+                  <div class="text-white px-3 py-4 p-md-5 mx-md-4 mt-5">
+                    <div >
+                      <% if @user.avatar.attached? %>
+                        <%= image_tag(@user.avatar, class: "profilePictureExample profilePicBorder centralizeSelectFile ")%>
+                      <%else%>
+                        <%= image_tag( "no-user-icon.jpg", class: "profilePictureExample profilePicBorder centralizeSelectFile ")%>
+                      <%end%>
+                    </div >
+                    <div class= " d-flex justify-content-center mt-4" >
+                    <h4 >Change your profile picture</h4>
+                    </div>
+                   <div class=" formFile mt-2" id="update" >
+
+                      <%= f.file_field :avatar,  class: "form-control  " %>
+                    </div>
+                   
+                    <%end%>
+                    <div class=" d-flex justify-content-center py-4 mt-5 ">
+                      <%= image_tag("edit-icon.png", style: "width: 150px")%>
+                    </div>
+                      
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script >
+
+(function()
+/* This fuction helps to fix the issue related to page that don't get the active storage content after load the page 'Edit Profile' */
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>

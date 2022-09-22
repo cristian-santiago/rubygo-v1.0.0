@@ -1,0 +1,46 @@
+<section class="vh-150  py-5 " >
+  <div class="container py-5 h-100 " >
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body p-4 ">
+            <div class="text-center my-3 pb-3">
+              <%= image_tag("https://cdn.emojidex.com/emoji/xxxhdpi/Ruby.png", class:'mb-2 mt-2')%>
+              <h1 >Ruby Go </h1>  
+             </div> 
+             <div class="contentBlog" >
+              <h2>Forgot your password?</h2>
+              <hr class="separator ">
+              
+                <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                  <%= render "devise/shared/error_messages", resource: resource %>
+
+                  <div class="form-floating mb-3">
+                    
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email',class: "form-control" %>
+                    <%= f.label :email %>
+                  </div>
+
+                 <div class= "actions" id="reset" >
+                        <%= f.submit "Send me reset password", class: "btn btn-primary col-12 mx-auto  gradient-custom-2 mb-3 btn-margin" %>
+                  </div>
+                 <% end %>
+                <hr class="separator ">
+                
+                    <div class="d-flex justify-content-center">
+                      <div class="px-3">
+                        <%= link_to "Log in", user_session_path,  class: "btn btn-outline-danger " %>
+                      </div>
+                      <div>
+                      
+                        <%= link_to "Sign up", new_user_registration_path,  class: "btn btn-outline-danger" %>
+                      </div>
+                      </div>                 
+              </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

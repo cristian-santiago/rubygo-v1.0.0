@@ -1,0 +1,63 @@
+<section class="vh-150  py-5 " >
+  <div class="container py-5 h-100 " >
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-9">
+        <div class="card">
+          <div class="card-body p-4 ">
+            <div class="text-center my-3 pb-3">
+              <%= image_tag("https://cdn.emojidex.com/emoji/xxxhdpi/Ruby.png", class:'mb-2 mt-2')%>
+              <h1 >Ruby Go </h1>  
+             </div> 
+                
+                <% if false %>     
+                <!-- removed this feature from this view-->      
+                  <% @categories.map do |cat| %>
+                    <%= link_to cat.category.to_s, blogs_path(:cate => cat.id), class: "link btn btn-outline-secondary" %>
+                  <%end%>
+                <%end%>
+                
+                <h2>Related Posts</h2>
+                <hr class="separator ">
+                <div class="contentBlog mb-2" >
+                  <% @blogs.last(3).map do |blog|%>
+                  
+                      <article class= "blog-card">
+                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title" %> </h2>
+                            
+                              <p><%= link_to blog.category.category, blogs_path(:cate => blog.category.id), class: "link btn btn-outline-secondary mt-3" %></p>
+                              
+                              <div class="align-img-name">
+                                <% if blog.user.avatar.present? %>
+                                  <%= image_tag(blog.user.avatar, class: "creator-img border-img") %>
+                                <%else%>
+                                  <%= image_tag("no-user-icon.jpg", class: "creator-img border-img") %>
+                                <%end%>
+                                <h5 class="name"><%= blog.user.username %></h5>                            
+                              </div> 
+                                <h6><%= blog.created_at.strftime("%d %b, %Y")%></h6>
+                              
+                              <p> <%= link_to blog.description.to_s, blog_path(blog.id), class: "link-description"%> </p>                              
+                            
+                            <% if false %>
+                              <!-- Removed this feature, add description on blog -->
+                              <h5 > <%= link_to truncate(sanitize(blog.content.to_s, tags: []), length: 200) , blog_path(blog.id), class: "link-content"%></h5> 
+                            <%end%>
+                      </article> 
+                          
+
+                  <%end%> 
+                </div>
+
+                <% if false  %>
+                  <!--Removed this block -->
+                  <div class = "align-center" >
+                    <%= link_to "Show all #{@blogs.count} posts.", all_blogs_path, class: "link-all-blogs btn btn-secondary" %>  
+                    <%= link_to "Show all posts.", all_blogs_path, class: "link-all-blogs btn btn-secondary" %> 
+                  </div> 
+                <% end %>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

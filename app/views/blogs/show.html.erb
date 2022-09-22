@@ -1,0 +1,66 @@
+<section class="vh-150  py-5 " >
+  <div class="container py-5 h-100 " >
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-12">
+        <div class="card">
+          <div class="card-body p-4 ">
+            <div class="text-center my-3 pb-3">
+              <%= image_tag("https://cdn.emojidex.com/emoji/xxxhdpi/Ruby.png", class:'mb-2 mt-2')%>
+              <h1 >Ruby Go </h1>  
+             </div> 
+            
+              <article class="blog-card ptsans contentBlog">
+                <% if user_signed_in? %>
+                    <div class="btn-align">             
+                    <%= link_to "Back", blogs_path, class: "btn btn-primary" %>              
+                  </div>
+              
+                  <div class="btn-align">
+                    <%= link_to "Edit", edit_blog_path(@blog.id), class: "btn btn-secondary" %>
+                  </div>              
+                  <div class="btn-align"> 
+                    <%= link_to "Delete", @blogs, data:{ turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{@blog.title} post?"}, class: "btn btn-danger", method: :delete %>                 
+                  </div>         
+          
+              <% end%>
+            
+
+                <div>
+                  <h2><%= @blog.title %></h2>
+                  
+                  <p>Tags: <%= link_to @blog.category.category, blogs_path(:cate => @blog.category_id), class: "italic-text-tags" %></p>
+                </div>
+                <hr class="separator">
+                <div class="mt-5">
+                  <%= raw @blog.content %>
+                </div>
+              </article>
+            
+            
+        
+           
+            
+          </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</section>
+<script >
+
+(function()
+/* This fuction helps to fix the issue related to page that don't get the prism content */
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem('firstLoad') )
+    {
+      localStorage['firstLoad'] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem('firstLoad');
+  }
+})();
+
+</script>

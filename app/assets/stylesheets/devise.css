@@ -1,0 +1,140 @@
+/* Login, Sign up and Edit Perfil */
+
+.centralize-form{
+
+    margin-left: 30% ;
+    
+}
+
+.btn-margin{
+    border: none;
+    box-shadow: 0 .2rem .5rem rgba(black, .15)
+}
+.btn-margin:hover{
+    box-shadow: 0 .5rem 1rem rgba(black, .15)
+}
+
+
+.gradient-custom-2 {
+        
+
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+
+.animated-img {
+    width: 250px;    
+    border-radius: 10px;
+    box-shadow: 0 0.2rem 0.5rem rgba(rgb(228, 224, 224), .60)
+        
+}
+
+/* Moving images on Sign up page  */
+
+@keyframes slideInFromLeft {
+    0% {
+        
+        transform: translateX(-25%);
+        opacity: 0.4;
+    }
+    100% {
+        
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+  
+  .slideFromLeft {  
+    
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    text-align: center;
+    margin-bottom: 5%;
+    
+  }
+
+
+
+  @keyframes slideInFromRight {
+    0% {
+        transform: translateX(30%);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+  
+  .slideFromRight{
+    animation: 1s ease-out 0s 1 slideInFromRight;
+    text-align: center;
+    margin-top: 5%;
+  }
+
+
+
+/* Profile photo and select file style */
+ 
+.profilePictureExample{
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;  
+    
+}
+
+.profilePicBorder{
+
+  position: relative;
+  background: linear-gradient(to right, red, orange);  
+  padding: 3px;
+}
+
+
+.centralizeSelectFile{
+  display: block;
+  margin: 0 auto;
+  
+}
+/*Return arrow from edit profile */
+
+
+.arrow {
+  border: solid rgb(204, 39, 39);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  
+}
+
+/* Reset Password page style */
+
+.linkResetPwd{
+  text-decoration: none;
+  color: red; 
+}
+.linkResetPwd:hover{
+  text-decoration: none;
+  color: orange;
+}
