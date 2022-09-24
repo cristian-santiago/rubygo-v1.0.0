@@ -9,14 +9,16 @@
               <h1 >Ruby Go </h1>  
              </div> 
                 
-                <% if false %>     
-                <!-- removed this feature from this view-->      
-                  <% @categories.map do |cat| %>
-                    <%= link_to cat.category.to_s, blogs_path(:cate => cat.id), class: "link btn btn-outline-secondary" %>
-                  <%end%>
-                <%end%>
-                
-                <h2>Related Posts</h2>
+                  
+                 <h2 > All Categories</h2>                
+                  <hr class="separator">
+                  
+                  <div >                
+                    <% @categories.map do |cat| %>
+                      <%= link_to cat.category, blogs_path(:cate => cat.id), class: "link variant" %>
+                    <%end%>
+                  </div>   
+                <h2>Posts</h2>
                 <hr class="separator ">
                 <div class="contentBlog mb-2" >
                   <% @blogs.last(3).map do |blog|%>
@@ -48,13 +50,13 @@
                   <%end%> 
                 </div>
 
-                <% if false  %>
-                  <!--Removed this block -->
+                
+                 
                   <div class = "align-center" >
                     <%= link_to "Show all #{@blogs.count} posts.", all_blogs_path, class: "link-all-blogs btn btn-secondary" %>  
-                    <%= link_to "Show all posts.", all_blogs_path, class: "link-all-blogs btn btn-secondary" %> 
+                    
                   </div> 
-                <% end %>
+                
           </div>  
         </div>
       </div>

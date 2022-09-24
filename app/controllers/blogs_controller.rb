@@ -10,11 +10,11 @@ class BlogsController < ApplicationController
       @blogs = Blog.where(:category_id => cate)
     else
 
-      redirect_to root_path
-    end
-  
+      @blogs = Blog.all
+    end  
       
   end
+
 
   def show    
     #@user = User.find(params[:id])
@@ -28,6 +28,13 @@ class BlogsController < ApplicationController
   
   def new
     @blog = Blog.new
+
+    if user_signed_in?
+    
+    else
+      redirect_to root_path
+    end
+
   end
   
 
@@ -65,10 +72,15 @@ class BlogsController < ApplicationController
   end
 
   def destroy 
-    @blog = Blog.find(params[:id])
-    @blog.destroy
 
-    redirect_to :action => :index, status: 303
+    if user_signed_in?
+      @blog = Blog.find(params[:id])
+      @blog.destroy
+
+      redirect_to :action => :index, status: 303
+    else
+      redirect_to root_path
+    end
   
     
 
@@ -77,7 +89,7 @@ class BlogsController < ApplicationController
 
 
   def blog_params
-    params.require(:blog).permit(:title, :description, :content, :category_id, :user_id, )
+    params.require(:blog).permit(:title, :description, :content, :category_id, :user_id, :search )
     
   end
 end

@@ -49,7 +49,22 @@
               <%= link_to "About", about_index_path, class: "nav-link navTextColor"%> 
                 
         </li>  
+
+        <!-- Options below only will be shown for logged in users -->
         <%if user_signed_in? %> 
+
+            <li class="nav-item active">
+            
+              <%= link_to "Create a Post", new_blog_path, class: "nav-link navTextColor "%>
+              
+            </li>
+
+            <li class="nav-item active">
+            
+              <%= link_to "Manage Tags", categories_path, class: "nav-link navTextColor "%>
+              
+            </li>
+
             <li class="nav-item active"> 
                   
                 <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link navTextColor btn btn-link"%> 
@@ -90,11 +105,13 @@
       <div class= "#">
         Developed by Cristian Santiago - &copy; <%= Date.current.year %>
       </div>
-            <div class= " footerImg ">
-              <%=link_to image_tag("github.svg", class: "contactIcons"), "https://github.com/cristian-santiago" %>
-              <%=link_to image_tag("linkedin.svg", class: "contactIcons"), "https://www.linkedin.com/in/eng-cristian/" %>
-              <%=link_to image_tag("instagram.svg", class: "contactIcons"), "https://www.instagram.com/eng_cristian/"%>
+            
+            <div class= " # ">
+              <%=link_to image_tag("github.svg", class: " contactIconsFooter "), "https://github.com/cristian-santiago" %>
+              <%=link_to image_tag("linkedin.svg", class: " contactIconsFooter "), "https://www.linkedin.com/in/eng-cristian/" %>
+              <%=link_to image_tag("instagram.svg", class: " contactIconsFooter "), "https://www.instagram.com/eng_cristian/"%>
             </div>
+            
 </footer>
   
 </html>

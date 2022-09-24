@@ -1,13 +1,4 @@
-<div >
-  <form class="d-flex search " >
-    <%= form_tag(@blogs_path, method: :get) do %>      
-        
-        <%= text_field_tag(:search, params[:search], placeholder: "Search for a blog here", maxlength: 50, class: "form-control me-2 ") %>        
-      
-        <button class="btn btn-outline-light" type="submit">Search</button>
-    <%end%>
-  </form>
-</div>
+
                   
 <section class="vh-150  py-5 " >
   <div class="container py-5 h-100 " >
@@ -20,17 +11,22 @@
               <h1 >Ruby Go </h1>  
              </div>              
                        
-        
-                  <h2 > All Categories</h2>                
                   <hr class="separator">
+                   <h2>Search for a Post </h2>
+                      <div >
+                          <form class=" d-flex search " >
+                            <%= form_tag(@blogs_path, method: :get) do %>      
+                                
+                                <%= text_field_tag(:search, params[:search], placeholder: "Search", maxlength: 50, class: "form-control me-2 ") %>        
+                                
+                                <button class="btn btn-outline-danger" type="submit">Search</button>
+                            <%end%>
+                          </form>
+                        </div>
                   
-                  <div >                
-                    <% @categories.map do |cat| %>
-                      <%= link_to cat.category, blogs_path(:cate => cat.id), class: "link variant" %>
-                    <%end%>
-                  </div>   
-
-                    <h2> Posts </h2>
+                           <hr class="separator">
+                    <h2>All Posts </h2>
+                  
                     <hr class="separator">
 
                   <% @blogs.order("blogs.created_at DESC").map do |blog|%>
@@ -58,11 +54,7 @@
                   <%end%>                    
 
                
-                  <div class = "align-center" >
-                  
-                    <%= link_to "Log in to see all posts.", root_path , class: "link-all-blogs btn btn-secondary" %>
-                  </div>    
-                                         
+                        
           </div>  
         </div>
       </div>

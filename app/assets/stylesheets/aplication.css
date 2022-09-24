@@ -9,12 +9,8 @@
 
 .search{
     
-    margin-right: 20px;
-    vertical-align: middle; 
-    width: 20%;  
-    float: right;
-    margin-top: -3rem;
-    position: relative;
+  
+    
 
 }
 /* Application style  */
@@ -69,13 +65,14 @@ footer{
     
 }
 
-.footerImg{
-    filter: invert(90%) sepia(100%) saturate(20%) hue-rotate(91deg) brightness(111%) contrast(100%);
-    width: 60%!important;
-    margin:  0 auto;
-          
-}
 
+.contactIconsFooter{
+   
+       
+    filter: invert(90%) sepia(100%) saturate(20%) hue-rotate(91deg) brightness(111%) contrast(100%);
+ 
+    
+}
 
 
 /* Custom fontes */

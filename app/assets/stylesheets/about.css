@@ -65,8 +65,9 @@
 
 /* Social Media and Email icons */
 .contactIcons{
-  width: 4%;
+  
   margin-right: 10px;  
+  max-width: none;
 }
 
 /* Colored links */

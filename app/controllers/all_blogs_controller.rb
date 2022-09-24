@@ -10,7 +10,7 @@ class AllBlogsController < ApplicationController
       @blogs = Blog.where(:category_id => cate)
      
     else
-      @blogs = Blog.all
+     redirect_to root_path
 
     end
     
@@ -19,12 +19,11 @@ class AllBlogsController < ApplicationController
          
   end
 
-
   private
 
 
   def blog_params
-    params.require(:blog).permit(:title, :description, :content, :category_id, :user_id, :search)
+    params.require(:blog).permit(:title, :description, :content, :category_id, :user_id)
     
   end
 
