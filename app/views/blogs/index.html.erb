@@ -5,11 +5,8 @@
         <div class="card">
           <div class="card-body p-4 ">
             <div class="text-center logoImgCont">
-                            <%= image_tag("rubylogo.png", class:'mb-2 logoImg')%>
-
-              
-             </div> 
-                
+                <%= image_tag("rubylogo.png", class:'mb-2 logoImg')%>              
+             </div>                 
                   
                  <h1 > Explore Categories</h1>                
                   <hr class="separator">
@@ -19,16 +16,20 @@
                       <%= link_to cat.category, blogs_path(:cate => cat.id), class: "link variant" %>
                     <%end%>
                   </div>   
+                  <hr class="separator">
                 <h1>Posts</h1>
                 <hr class="separator ">
                 <div class="contentBlog mb-2" >
                   <% @blogs.order("blogs.created_at DESC").map do |blog|%>
                   
                       <article class= "blog-card">
-                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title coloredLink" %> </h2>
+                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title coloredLink " %> </h2>
                             
-                              <p><%= link_to blog.category.category, blogs_path(:cate => blog.category.id), class: "link btn btn-outline-secondary mt-3" %></p>
-                              
+                               <div class = "mb-3 mt-3">
+                             <%= link_to blog.category.category, blogs_path(:cate => blog.category_id), class: "link btn btn-outline-secondary categoryBtn" %>
+                             
+                             
+                            </div> 
                               <div class="align-img-name">
                                 <% if blog.user.avatar.present? %>
                                   <%= image_tag(blog.user.avatar, class: "creator-img border-img") %>

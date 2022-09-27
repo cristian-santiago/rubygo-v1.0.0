@@ -15,7 +15,11 @@
     overflow: hidden;
     overflow-x: hidden;
     overflow-y: hidden;
-
+    box-shadow: 0 0.2rem 0.5rem rgba(rgb(228, 224, 224), .60)
+}
+.blog-card:hover{
+    
+    box-shadow: 0 0.2rem 0.5rem rgba(rgb(170, 166, 166), .60)
 }
 .card {
     border: 0 !important;

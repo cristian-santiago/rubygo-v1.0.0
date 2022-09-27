@@ -89,7 +89,29 @@
 .variant:nth-child(4n):hover {
     background-color: hsl(39, 100%, 80%);
     color: hsl(39, 100%, 25%)
+    
 }
+.variant:nth-child(5n) {
+    background-color: hsl(111, 28%, 90%);
+    color: hsl(110, 30%, 35%)
+}
+.variant:nth-child(5n):hover {
+    background-color: hsl(111, 28%, 80%);
+    color: hsl(110, 30%, 35%)
+}
+
+
+.variant:nth-child(6n) {
+    background-color: hsl(283, 39%, 93%);
+    color: hsl(240, 64%, 35%);
+}
+.variant:nth-child(6n):hover {
+    background-color: hsl(283, 39%, 83%);
+    color: hsl(240, 64%, 35%);
+}
+
+
+
 /*---------------*/
 
 .categoryBtn{

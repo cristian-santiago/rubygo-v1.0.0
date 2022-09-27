@@ -28,9 +28,9 @@
                 <div>
                   <h1  > <strong><%= @blog.title %> </strong></h1>
                   <p> <i><%= @blog.description %></i></p>
-
                   
-                  <p>Tags: <%= link_to @blog.category.category, blogs_path(:cate => @blog.category_id), class: "italic-text-tags" %></p>
+                  <h6><i>Category: <%= link_to @blog.category.category, blogs_path(:cate => @blog.category_id), class: "italic-text-tags coloredLink" %></i></h6>
+                  <h6><i>Updated at <%= @blog.updated_at.strftime("%d %b, %Y")%></i></h6>
                 </div>
                 <hr class="separator">
                 <div class="mt-5">
