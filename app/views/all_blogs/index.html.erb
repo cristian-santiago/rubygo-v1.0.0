@@ -1,18 +1,16 @@
-
-                  
 <section class="vh-150  py-5 " >
   <div class="container py-5 h-100 " >
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-9 col-xl-9 " >
         <div class="card">
           <div class="card-body p-4 ">
-             <div class="text-center my-3 pb-3">
-              <%= image_tag("https://cdn.emojidex.com/emoji/xxxhdpi/Ruby.png", class:'mb-2 mt-2')%>
-              <h1 >Ruby Go </h1>  
+             <div class="text-center logoImgCont">
+              <%= image_tag("rubylogo.png", class:'logoImg')%>
+               
              </div>              
                        
                   <hr class="separator">
-                   <h2>Search for a Post </h2>
+                   <h1>Search for a Post </h1>
                       <div >
                           <form class=" d-flex search " >
                             <%= form_tag(@blogs_path, method: :get) do %>      
@@ -25,13 +23,13 @@
                         </div>
                   
                            <hr class="separator">
-                    <h2>All Posts </h2>
+                    <h1>All Posts </h1>
                   
                     <hr class="separator">
 
                   <% @blogs.order("blogs.created_at DESC").map do |blog|%>
                       <article class= "blog-card">
-                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title" %> </h2>
+                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title coloredLink" %> </h2>
                           <div class = "mb-3 mt-3">
                              <%= link_to blog.category.category, blogs_path(:cate => blog.category_id), class: "link btn btn-outline-secondary categoryBtn" %>
                              

@@ -123,3 +123,13 @@
     color: rgba(20, 19, 19, 0.767);
 
 }
+
+.logoImg{
+    width: 250px;
+    height: 250px;
+
+    }
+.logoImgCont {
+    margin-top: -4rem!important;
+    margin-bottom: 5em!important;
+}
