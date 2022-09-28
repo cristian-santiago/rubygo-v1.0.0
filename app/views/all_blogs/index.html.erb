@@ -9,16 +9,22 @@
              </div>              
                        
                   
-                   <h1>Search for a Post </h1>
+                   <h1>Search </h1>
                       <div >
                           <form class=" d-flex search " >
                             <%= form_tag(@blogs_path, method: :get) do %>      
                                 
-                                <%= text_field_tag(:search, params[:search], placeholder: "Search", maxlength: 50, class: "form-control me-2 ") %>        
+                                <%= text_field_tag(:search, params[:search], placeholder: "Type a specific word, e.g.: 'Framework' ", maxlength: 50, class: "form-control me-2 ") %>        
                                 
                                 <button class="btn btn-outline-danger" type="submit">Search</button>
                             <%end%>
                           </form>
+                           <% if flash.notice %>
+                  <p class="alert alert-success mb-0"><%= notice %></p>
+                <% end %>
+                <% if alert %>
+                  <p class="alert alert-danger mb-0"><%= alert %></p>
+                <% end %>
                         </div>
                   
                            <hr class="separator">
@@ -28,7 +34,7 @@
 
                   <% @blogs.order("blogs.created_at DESC").map do |blog|%>
                       <article class= "blog-card">
-                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title coloredLink" %> </h2>
+                          <h2 ><%= link_to blog.title, blog_path(blog.friendly_id), class: "link-title coloredLink" %> </h2>
                           <div class = "mb-3 mt-3">
                              <%= link_to blog.category.category, blogs_path(:cate => blog.category_id), class: "link btn btn-outline-secondary categoryBtn" %>
                              
@@ -44,7 +50,7 @@
                                 <h5 class="name"><%= blog.user.username %></h5>
                               </div>
                               <h6><%= blog.created_at.strftime("%d %b, %Y")%></h6>                        
-                            <p> <%= link_to blog.description.to_s, blog_path(blog.id), class: "link-description"%> </p>                            
+                            <p> <%= link_to blog.description.to_s, blog_path(blog.friendly_id), class: "link-description"%> </p>                            
                    
 
                       </article> 

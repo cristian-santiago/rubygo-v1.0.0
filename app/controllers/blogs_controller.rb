@@ -1,4 +1,9 @@
 class BlogsController < ApplicationController
+
+ 
+ 
+
+
   
   def index
     
@@ -18,7 +23,10 @@ class BlogsController < ApplicationController
 
   def show    
     #@user = User.find(params[:id])
+
     @blog = Blog.find(params[:id])
+    
+
     if @blog.nil?
       redirect_to :action => :index
     end    
@@ -65,6 +73,7 @@ class BlogsController < ApplicationController
     
     if user_signed_in?
       @blog.update(blog_params)
+      
       redirect_to @blog
     else
       render :edit
@@ -87,9 +96,10 @@ class BlogsController < ApplicationController
   end
   private
 
+  
 
   def blog_params
-    params.require(:blog).permit(:title, :description, :content, :category_id, :user_id, :search )
+    params.require(:blog).permit(:title, :description, :content, :category_id, :user_id, :slug )
     
   end
 end

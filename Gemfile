@@ -56,6 +56,8 @@ gem "aws-sdk-s3"
 
 gem 'tinymce-rails'
 
+gem "friendly_id", :require => "friendly_id"
+
 # gem 'rails-i18n'
 
 # Use Sass to process CSS

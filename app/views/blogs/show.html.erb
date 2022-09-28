@@ -16,7 +16,7 @@
                   </div>
               
                   <div class="btn-align">
-                    <%= link_to "Edit", edit_blog_path(@blog.id), class: "btn btn-secondary" %>
+                    <%= link_to "Edit", edit_blog_path(@blog.friendly_id), class: "btn btn-secondary" %>
                   </div>              
                   <div class="btn-align"> 
                     <%= link_to "Delete", @blogs, data:{ turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{@blog.title} post?"}, class: "btn btn-danger", method: :delete %>                 

@@ -1,3 +1,10 @@
+  <% if flash.notice %>
+        <p class="alert alert-success mb-0"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger mb-0"><%= alert %></p>
+      <% end %>
+
 <section class="vh-150  py-5 " >
   <div class="container py-5 h-100 " >
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -23,7 +30,7 @@
                   <% @blogs.order("blogs.created_at DESC").map do |blog|%>
                   
                       <article class= "blog-card">
-                          <h2 ><%= link_to blog.title, blog_path(blog.id), class: "link-title coloredLink " %> </h2>
+                          <h2 ><%= link_to blog.title, blog_path(blog.friendly_id), class: "link-title coloredLink " %> </h2>
                             
                                <div class = "mb-3 mt-3">
                              <%= link_to blog.category.category, blogs_path(:cate => blog.category_id), class: "link btn btn-outline-secondary categoryBtn" %>
@@ -40,7 +47,7 @@
                               </div> 
                                 <h6><%= blog.created_at.strftime("%d %b, %Y")%></h6>
                               
-                              <p> <%= link_to blog.description.to_s, blog_path(blog.id), class: "link-description"%> </p>                              
+                              <p> <%= link_to blog.description.to_s, blog_path(blog.friendly_id), class: "link-description"%> </p>                              
                             
                             <% if false %>
                               <!-- Removed this feature, add description on blog -->
