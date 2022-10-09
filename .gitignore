@@ -32,10 +32,7 @@
 /config/storage.yml
 /config/credentials.yml.enc
 /config/credentials
-node_modules
 
-# Ignore JavaScript
 
-app/javascript/*
 
 

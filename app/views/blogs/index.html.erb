@@ -27,7 +27,7 @@
                 <h1>Posts</h1>
                 <hr class="separator ">
                 <div class="contentBlog mb-2" >
-                  <% @blogs.order("blogs.created_at DESC").map do |blog|%>
+                  <% @blogs.limit(3).sort{ |x,y| x.id <=> y.id }.map do |blog|%>
                   
                       <article class= "blog-card">
                           <h2 ><%= link_to blog.title, blog_path(blog.friendly_id), class: "link-title coloredLink " %> </h2>
